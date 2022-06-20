@@ -4,7 +4,7 @@ This is a wrapper-script for NetworkManagers OpenConnect helper, that routes adr
 
 Run the following to divert the real helper:
 ``` sh
-dpkg-divert --add --rename --divert \
+sudo dpkg-divert --add --rename --divert \
 /usr/lib/NetworkManager/nm-openconnect-service-openconnect-helper.real \
 /usr/lib/NetworkManager/nm-openconnect-service-openconnect-helper
 ```
