@@ -30,8 +30,8 @@ main(){
     env | sort > /tmp/nm_env.txt
     [ ! -f /tmp/vpn_excl.txt ] && grep X-CSTP-Split-Exclude /tmp/nm_env.txt | sort | uniq | awk -F '=' '{print $2}' > /tmp/vpn_excl.txt
     REASON=$(grep reason /tmp/nm_env.txt | awk -F '=' '{print $2}' | xargs)
-    [[ $REASON = "connect" ]] && vpn_up
-    [[ $REASON = "disconnect" ]] && vpn_down
+    [[ "$REASON" = "connect" ]] && vpn_up
+    [[ "$REASON" = "disconnect" ]] && vpn_down
     rm /tmp/nm_env.txt
 }
 
